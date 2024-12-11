@@ -1,0 +1,50 @@
+@import '../../styles/mixins.scss';
+
+.galleryStyled {
+  background-image: url('/media/countdownBackgroundV1.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 30px;
+  margin: 20vh auto;
+  padding-bottom: 250px;
+  margin-bottom: -32px;
+
+  color: black;
+
+  .galleryTitle {
+    font-size: 4rem;
+    @include parisienne-font;
+  }
+  .gallerySubTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 0 1rem;
+    @include parisienne-font;
+  }
+
+  .imageContainer {
+    margin: 200px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .image {
+    width: 200px;
+    height: auto;
+  }
+
+  .left {
+    transform: rotate(-10deg);
+  }
+
+  .right {
+    transform: rotate(10deg);
+  }
+}

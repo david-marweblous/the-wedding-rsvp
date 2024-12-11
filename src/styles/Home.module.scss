@@ -1,0 +1,17 @@
+.mainView {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1rem 15%;
+  height: 100%;
+  width: 100dvw;
+  margin-top: 40px;
+  //background-color: #b0d5ee;
+  background-image: url('/media/background.webp');
+  //background-size: cover;
+  background-position: center top;
+}
+.centerblock {
+}

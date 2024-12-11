@@ -1,118 +1,283 @@
-import Head from "next/head";
-import Image from "next/image";
-import localFont from "next/font/local";
-import styles from "@/styles/Home.module.css";
+// Global imports
+import Head from 'next/head';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// Style imports
+import styles from '@/styles/Home.module.scss';
+
+// Component imports
+import { Countdown } from '@/components/Countdown';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components';
+import { Details } from '@/components/Details';
+import { Timeline } from '@/components/Timeline';
+import { Gallery } from '@/components/Gallery';
+import { Transport } from '@/components/Transport';
+import { Hotel } from '@/components/Hotel';
+import { Dresscode } from '@/components/Dresscode';
+import Calendar from '@/components/Calendar';
+
+// Static data
+const navLinks = [
+  {
+    href: '/',
+    text: 'Home'
+  },
+  {
+    href: '/rsvp',
+    text: 'RSVP'
+  },
+  {
+    href: '#itinary',
+    text: 'Itinary'
+  }
+];
+
+const heroData = {
+  img: {
+    src: '/media/heroH.webp',
+    alt: 'awsome hero image'
+  },
+  title: 'David & Rebeca',
+  subTitle: '31-05-25'
+};
+
+const detailsData = {
+  img: [
+    {
+      src: '/media/itinararyRings.png',
+      alt: 'wedding rings'
+    },
+    {
+      src: '/media/itinararyGlases.png',
+      alt: 'martini glass'
+    },
+    {
+      src: '/media/itinararyPlater.png',
+      alt: 'wedding plater'
+    },
+    {
+      src: '/media/itinararyMusic.svg',
+      alt: 'wedding music'
+    }
+  ],
+  title: 'Ceramony, Social hour, Dinner and Party',
+  subtitle: 'Cortijo San Antonio',
+  text: 'Ctra Málaga-Campillos,Km 32,5,29566 Casarabonela, Malaga, España',
+  time: '6:00 PM',
+  link: {
+    url: 'somewhere',
+    text: 'See directions'
+  }
+};
+
+const timelineData = [
+  {
+    img: '/media/itinararyRings.png',
+    alt: 'wedding rings',
+    time: '19:00',
+    text: 'Ceremony'
+  },
+  {
+    img: '/media/itinararyGlases.png',
+    alt: 'martini glass',
+    time: '20:00',
+    text: 'Cocktails'
+  },
+  {
+    img: '/media/itinararyPlater.png',
+    alt: 'wedding plater',
+    time: '21:00',
+    text: 'Dinner'
+  },
+  {
+    img: '/media/itinararyMusic.svg',
+    alt: 'wedding music',
+    time: '23:00',
+    text: 'Party'
+  },
+  {
+    img: '/media/itinararyCar.png',
+    alt: 'wedding car',
+    time: '04:00',
+    text: 'Fek off free loaders'
+  }
+];
+
+const imageData = [
+  {
+    src: '/media/galleryImage1.jpg',
+    alt: 'picture of the happy couple 1'
+  },
+  {
+    src: '/media/galleryImage1.jpg',
+    alt: 'picture of the happy couple 2'
+  },
+  {
+    src: '/media/galleryImage1.jpg',
+    alt: 'picture of the happy couple 3'
+  }
+];
+
+const transportData = {
+  images: [
+    {
+      src: '/media/transportImage1.png',
+      alt: 'picture of a bus'
+    },
+    {
+      src: '/media/transportImage2.png',
+      alt: 'picture of a thistle'
+    }
+  ],
+  header: 'Transport service',
+  text: 'We want you to only worry about having a good time, so you have at your disposal a bus service that will take you to the venue.',
+  details: [
+    {
+      text: 'Depart',
+      time: '6:00 PM'
+    },
+    {
+      text: 'First return',
+      time: '1:00 AM'
+    },
+    {
+      text: 'Second return',
+      time: '4:00 AM'
+    }
+  ],
+  pickup: 'Pick up point is:',
+  pickupText: 'Tivoli car park'
+};
+
+const hotelData = {
+  text: 'Sabemos que muchos venis desde diferentes lugares y paises asi que aqui te dejamos una lista de hotes para ayuarte con la busquedad.',
+  details: [
+    {
+      title: 'Hotels Benalmádena',
+      hotel: [
+        {
+          text: 'hotel name1',
+          url: 'url1'
+        },
+        {
+          text: 'hotel name2',
+          url: 'url2'
+        },
+        {
+          text: 'hotel name3',
+          url: 'url3'
+        }
+      ]
+    },
+    {
+      title: 'Hotels Torremolinos',
+      hotel: [
+        {
+          text: 'hotel name 1',
+          url: 'url1'
+        },
+        {
+          text: 'hotel name 2',
+          url: 'url2'
+        }
+      ]
+    },
+    {
+      title: 'Hotels Coín',
+      hotel: [
+        {
+          text: 'hotel name1',
+          url: 'url1'
+        },
+        {
+          text: 'hotel name2',
+          url: 'url2'
+        },
+        {
+          text: 'hotel name3',
+          url: 'url3'
+        }
+      ]
+    }
+  ],
+  img: [
+    {
+      src: '/media/hotelImage1.png',
+      alt: 'Drawing of a creasent moon'
+    },
+    {
+      src: '/media/hotelImage2.png',
+      alt: 'Drawing of a sunflower'
+    }
+  ]
+};
+
+const dresscodeData = {
+  title: 'Dresscode',
+  img: [
+    {
+      src: 'https://davidandrebeca.my.canva.site/media/729b1d11e2346feeacdd715a72c3d958.svg',
+      alt: 'Drawing of suit and dress'
+    },
+    {
+      src: 'https://davidandrebeca.my.canva.site/media/c444d11693035bfdf68cf9d9c4847dd5.svg',
+      alt: 'Drawing of a clothes label'
+    },
+    {
+      src: 'https://davidandrebeca.my.canva.site/media/be8b48b55e39b1e1d75af2021037260d.svg',
+      alt: 'Pinterest logo'
+    },
+    {
+      src: 'https://davidandrebeca.my.canva.site/media/554096e51d88b0acae1e0ce823b81fc3.svg',
+      alt: 'Drawing of people'
+    }
+  ],
+  typeText: [
+    {
+      text: 'Formal'
+    },
+    {
+      text: 'Semi formal'
+    }
+  ],
+  link: {
+    url: 'url here',
+    text: 'Here are some ideas'
+  },
+  footer: 'No children allowed'
+};
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>David & Rebeca's wedding</title>
         <meta name="description" content="Generated by create next app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <main className={styles.main}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
-          <ol>
-            <li>
-              Get started by editing <code>src/pages/index.tsx</code>.
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
 
-          <div className={styles.ctas}>
-            <a
-              className={styles.primary}
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className={styles.logo}
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondary}
-            >
-              Read our docs
-            </a>
-          </div>
-        </main>
-        <footer className={styles.footer}>
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/file.svg"
-              alt="File icon"
-              width={16}
-              height={16}
-            />
-            Learn
-          </a>
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/window.svg"
-              alt="Window icon"
-              width={16}
-              height={16}
-            />
-            Examples
-          </a>
-          <a
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Go to nextjs.org →
-          </a>
-        </footer>
-      </div>
+      <Header links={navLinks} />
+
+      <main className={styles.mainView}>
+        <Hero {...heroData} />
+
+        <Countdown time={1748714400000} />
+
+        <Calendar year={2025} month={4} />
+
+        <Details {...detailsData} />
+
+        <Timeline timeline={timelineData} />
+
+        <Gallery gallery={imageData} />
+
+        <Transport {...transportData} />
+
+        <Hotel {...hotelData} />
+
+        <Dresscode {...dresscodeData} />
+      </main>
     </>
   );
 }

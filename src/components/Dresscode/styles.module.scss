@@ -1,0 +1,40 @@
+@import '../../styles/mixins.scss';
+
+.dresscodeStyled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 50px;
+  margin: 20vh auto;
+
+  .title {
+    font-size: 4rem;
+    @include parisienne-font;
+  }
+  img {
+    width: 30%;
+  }
+  p {
+    font-size: 2rem;
+  }
+  a {
+    color: lightblue;
+  }
+  .dividerContainer {
+    display: flex;
+    width: 100%;
+
+    img {
+      width: 15%;
+    }
+
+    .divider {
+      flex: 1;
+      border: 1 solid;
+      width: 20%;
+      height: 2px;
+      margin-top: 9%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../styles/mixins.scss';
+
+.calendarStyled {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
+  color: black;
+  margin: 0 auto;
+  background-color: #cdcabd;
+
+  border: 10px solid;
+  border-color: black;
+  font-size: 30px;
+  width: 100%;
+  td {
+    position: relative;
+    padding: 30px;
+  }
+
+  .calendarHeader {
+    @include parisienne-font;
+  }
+
+  .calendarHighlight {
+    position: absolute;
+    inset: 0;
+    top: 5px;
+    z-index: -1;
+  }
+}
