@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
+
 interface Iimage {
   src: string;
   alt: string;
@@ -22,7 +23,7 @@ interface TransportProps {
 export const Transport: React.FC<TransportProps> = data => {
   return (
     <div className={styles.transportStyled}>
-      <img src={data.images[0].src} alt={data.images[0].alt} />
+      <img src={data.images[0].src} alt={data.images[0].alt} loading="lazy" />
       <h2 className={styles.galleryTitle}>{data.header}</h2>
       <p className={styles.gallerySubTitle}>{data.text}</p>
       <div className={styles.details}>
@@ -37,9 +38,6 @@ export const Transport: React.FC<TransportProps> = data => {
       <div className={styles.footer}>
         <p>{data.pickup}</p>
         <p>{data.pickupText}</p>
-      </div>
-      <div className={styles.footerImage}>
-        <img src={data.images[1].src} alt={data.images[1].alt} />
       </div>
     </div>
   );

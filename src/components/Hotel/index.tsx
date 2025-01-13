@@ -26,25 +26,28 @@ export const Hotel: React.FC<HotelProps> = data => {
   return (
     <div className={styles.hotelStyled}>
       <img src={data.img[0].src} alt={data.img[0].alt} />
+
+      <p className={styles.title}>Hotels</p>
       <p className={styles.subtitle}>{data.text}</p>
-      <div className={styles.hotel}>
-        {data.details.map((detail, idx) => {
-          return (
-            <>
-              <h2 className={styles.hotelTitle}>{detail.title}</h2>
-              {detail.hotel.map((hotelData, idx) => {
+
+      {data.details.map((detail, idx) => {
+        return (
+          <div className={styles.hotel}>
+            <h2 className={styles.hotelTitle} key={idx}>
+              {detail.title}
+            </h2>
+            <div className={styles.hotelList}>
+              {detail.hotel.map((hotelData, idy) => {
                 return (
-                  <>
-                    <p>
-                      <a href={hotelData.url}>{hotelData.text}</a>
-                    </p>
-                  </>
+                  <a key={idy} href={hotelData.url}>
+                    {hotelData.text}
+                  </a>
                 );
               })}
-            </>
-          );
-        })}
-      </div>
+            </div>
+          </div>
+        );
+      })}
       <div className={styles.imageContainer}>
         <img src={data.img[1].src} alt={data.img[1].alt} />
       </div>

@@ -1,0 +1,18 @@
+envolope open say name then go to main page
+
+home with info.
+
+rsvp
+	header
+	footer
+	inputs
+		inputs with names of guests
+		checkbox for rsvp for each guest in that group
+		text area with food alergins / prefrence
+		button send info
+
+		
+
+DATABASE:
+	guests: id PK, name, family_id FK, rsvp (timestamp), text
+	family: id, name

@@ -1,0 +1,17 @@
+.musicPlayerStyled {
+  color: black;
+}
+.musicPlayerStyled button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+  background: #ced9f4;
+}
+.musicPlayerStyled button svg {
+  width: 1.5rem;
+}/*# sourceMappingURL=styles.module.css.map */

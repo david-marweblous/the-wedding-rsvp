@@ -34,38 +34,26 @@ const navLinks = [
 
 const heroData = {
   img: {
-    src: '/media/heroH.webp',
+    src: '/media/heroFlowers.png',
     alt: 'awsome hero image'
   },
   title: 'David & Rebeca',
-  subTitle: '31-05-25'
+  subTitle: '31 May 25'
 };
 
 const detailsData = {
-  img: [
-    {
-      src: '/media/itinararyRings.png',
-      alt: 'wedding rings'
-    },
-    {
-      src: '/media/itinararyGlases.png',
-      alt: 'martini glass'
-    },
-    {
-      src: '/media/itinararyPlater.png',
-      alt: 'wedding plater'
-    },
-    {
-      src: '/media/itinararyMusic.svg',
-      alt: 'wedding music'
-    }
-  ],
+  groomName: 'David Martin Mitchell',
+  brideName: 'Rebeca Amazonas Maldonado Prieto',
+  img: {
+    src: '/media/detailsImage.png',
+    alt: 'dark flower'
+  },
   title: 'Ceramony, Social hour, Dinner and Party',
   subtitle: 'Cortijo San Antonio',
   text: 'Ctra Málaga-Campillos,Km 32,5,29566 Casarabonela, Malaga, España',
   time: '6:00 PM',
   link: {
-    url: 'somewhere',
+    url: 'https://www.google.com/maps/place/Cortijo+San+Antonio/@36.814201,-4.7913,17z/data=!3m1!4b1!4m9!3m8!1s0xd72c1207284ea3d:0x5ab8c1ab1bfdeb83!5m2!4m1!1i2!8m2!3d36.814201!4d-4.7913!16s%2Fg%2F1v8j1svx?entry=ttu&g_ep=EgoyMDI1MDEwNy4wIKXMDSoASAFQAw%3D%3D',
     text: 'See directions'
   }
 };
@@ -121,7 +109,7 @@ const imageData = [
 const transportData = {
   images: [
     {
-      src: '/media/transportImage1.png',
+      src: '/media/transportImage.png',
       alt: 'picture of a bus'
     },
     {
@@ -150,22 +138,22 @@ const transportData = {
 };
 
 const hotelData = {
-  text: 'Sabemos que muchos venis desde diferentes lugares y paises asi que aqui te dejamos una lista de hotes para ayuarte con la busquedad.',
+  text: 'Sabemos que muchos venis desde diferentes lugares y paises asi que aqui te dejamos una lista de hotels para ayuarte con la busquedad.',
   details: [
     {
       title: 'Hotels Benalmádena',
       hotel: [
         {
-          text: 'hotel name1',
-          url: 'url1'
+          text: 'Hotel Benalma',
+          url: 'https://www.hotelbenalma.com/en/'
         },
         {
-          text: 'hotel name2',
-          url: 'url2'
+          text: 'Hotel Siroco',
+          url: 'https://www.besthotels.es/en/destinations-and-hotels/best-siroco.html'
         },
         {
-          text: 'hotel name3',
-          url: 'url3'
+          text: 'Hostal Sol y Miel',
+          url: 'https://www.booking.com/hotel/es/hostal-sol-y-miel.es.html'
         }
       ]
     },
@@ -173,37 +161,20 @@ const hotelData = {
       title: 'Hotels Torremolinos',
       hotel: [
         {
-          text: 'hotel name 1',
-          url: 'url1'
+          text: 'Sol Principe',
+          url: 'https://www.melia.com/en/hotels/spain/torremolinos/sol-principe'
         },
         {
-          text: 'hotel name 2',
-          url: 'url2'
-        }
-      ]
-    },
-    {
-      title: 'Hotels Coín',
-      hotel: [
-        {
-          text: 'hotel name1',
-          url: 'url1'
-        },
-        {
-          text: 'hotel name2',
-          url: 'url2'
-        },
-        {
-          text: 'hotel name3',
-          url: 'url3'
+          text: 'BLUESEA Gran Cervantes',
+          url: 'https://www.blueseahotels.com/en/hoteles/destinos/costa-del-sol/torremolinos/bluesea-gran-cervantes'
         }
       ]
     }
   ],
   img: [
     {
-      src: '/media/hotelImage1.png',
-      alt: 'Drawing of a creasent moon'
+      src: '/media/hotelImage.png',
+      alt: 'Yellow flower'
     },
     {
       src: '/media/hotelImage2.png',
@@ -264,7 +235,7 @@ export default function Home() {
 
         <Countdown time={1748714400000} />
 
-        <Calendar year={2025} month={4} />
+        {/*<Calendar year={2025} month={4} />*/}
 
         <Details {...detailsData} />
 

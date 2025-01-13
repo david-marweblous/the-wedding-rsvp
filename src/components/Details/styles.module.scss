@@ -1,38 +1,68 @@
 @import '../../styles/mixins.scss';
 .detailsStyled {
-  color: black;
-  margin: 20vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   gap: 4rem;
 
-  .detailsImages {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 7rem;
+  color: black;
+  text-align: center;
 
-    width: 100%;
+  margin: 20vh auto;
 
-    img {
-      width: 5rem;
+  .detailsImage {
+    width: 25%;
+    margin-bottom: -2rem;
+  }
+
+  .detailsNames {
+    p {
+      font-size: 1.5rem;
+    }
+
+    .rock {
+      font-size: 4.5rem;
+      color: #cfc0d3;
     }
   }
+
   p {
     font-size: 2rem;
   }
-  .title {
-    font-size: 3.2rem;
+
+  .detailsTitle {
+    font-size: 1.5rem;
     @include parisienne-font;
   }
-  .subtitle {
-    font-size: 2rem;
-  }
-  a {
-    color: black;
-    font-size: 2rem;
+
+  .detailsAddress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .time {
+      font-size: 1.25rem;
+    }
+
+    .location {
+      font-size: 1.5rem;
+    }
+
+    .address {
+      font-size: 1.25rem;
+    }
+
+    a {
+      font-size: 1.5rem;
+      color: #000;
+      text-decoration: none;
+
+      padding: 0.25rem 0.5rem;
+      margin-top: 0.5rem;
+
+      border-top: 2px solid #ced9f4;
+      border-bottom: 4px solid #ced9f4;
+    }
   }
 }

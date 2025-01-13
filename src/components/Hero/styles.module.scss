@@ -7,34 +7,50 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 
   color: #000;
 
-  img {
+  .heroImage {
+    position: relative;
     width: 100%;
+
+    font-size: 4rem;
+    @include parisienne-font;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
   }
 
-  .heroOverlay {
-    position: absolute;
-    inset: 0;
+  .heroTitle {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 
+    font-size: 2.5rem;
+    @include parisienne-font;
+  }
+
+  .heroSubtitle {
+    font-size: 1.75rem;
+    @include parisienne-font;
+  }
+
+  .musicPlayer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 
-    height: 100%;
-    width: 100%;
-
-    .heroTitle {
-      font-size: 4rem;
-      @include parisienne-font;
-    }
-
-    .heroSubtitle {
-      font-size: 2.2rem;
-      @include parisienne-font;
-    }
+    font-size: 1.25rem;
+    color: #54595f;
   }
 }

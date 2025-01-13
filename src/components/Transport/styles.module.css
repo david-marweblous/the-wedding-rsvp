@@ -1,0 +1,39 @@
+.transportStyled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+}
+.transportStyled img {
+  width: 30%;
+}
+.transportStyled .galleryTitle {
+  font-size: 3rem;
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.transportStyled .gallerySubTitle {
+  font-size: 1.5rem;
+  color: #54595f;
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.transportStyled .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+.transportStyled .footer {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}/*# sourceMappingURL=styles.module.css.map */

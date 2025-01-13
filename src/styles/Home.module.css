@@ -1,0 +1,13 @@
+.mainView {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  height: 100%;
+  width: 100dvw;
+  margin-top: 40px;
+  background-image: url("/media/background.jpg");
+  background-position: center top;
+}/*# sourceMappingURL=Home.module.css.map */

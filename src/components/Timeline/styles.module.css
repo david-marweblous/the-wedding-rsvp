@@ -1,0 +1,28 @@
+.timelineStyled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.timelineStyled .timelineComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.timelineStyled .timelineComponent img {
+  width: 40%;
+}
+.timelineStyled .timelineComponent .time {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ced9f4;
+  margin-top: 1.5rem;
+}
+.timelineStyled .timelineComponent .text {
+  font-size: 1.5rem;
+}
+.timelineStyled .squiggle {
+  width: 5rem;
+  transform: rotate(-45deg);
+}/*# sourceMappingURL=styles.module.css.map */

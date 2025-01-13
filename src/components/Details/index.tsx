@@ -1,17 +1,17 @@
 import styles from './styles.module.scss';
 
-interface IImages {
-  src: string;
-  alt: string;
-}
-
 interface Iurl {
   url: string;
   text: string;
 }
 
 interface DetailsProps {
-  img: IImages[];
+  groomName: string;
+  brideName: string;
+  img: {
+    src: string;
+    alt?: string;
+  };
   title: string;
   subtitle: string;
   text: string;
@@ -22,20 +22,22 @@ interface DetailsProps {
 export const Details: React.FC<DetailsProps> = data => {
   return (
     <div className={styles.detailsStyled}>
-      <div className={styles.detailsImages}>
-        {data.img.map(img => {
-          return <img src={img.src} alt={img.alt} />;
-        })}
+      <img className={styles.detailsImage} src={data.img.src} alt={data.img.alt} />
+
+      <div className={styles.detailsNames}>
+        <p>{data.groomName}</p>
+        <p className={styles.rock}>&</p>
+        <p>{data.brideName}</p>
       </div>
 
-      <h2 className={styles.title}>{data.title}</h2>
+      <h2 className={styles.detailsTitle}>{data.title}</h2>
 
-      <div>
-        <h3 className={styles.subtitle}>{data.subtitle}</h3>
-        <p>{data.text}</p>
-        <p>{data.time}</p>
+      <div className={styles.detailsAddress}>
+        <p className={styles.time}>{data.time}</p>
+        <p className={styles.location}>{data.subtitle}</p>
+        <p className={styles.address}>{data.text}</p>
+        <a href={data.link.url}>{data.link.text}</a>
       </div>
-      <a href={data.link.url}>{data.link.text}</a>
     </div>
   );
 };

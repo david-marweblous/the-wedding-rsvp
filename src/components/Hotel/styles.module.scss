@@ -1,33 +1,66 @@
 @import '../../styles/mixins.scss';
 
 .hotelStyled {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+
   text-align: center;
 
+  img {
+    width: 35%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
   .subtitle {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     @include parisienne-font;
     padding: 0 20px;
   }
 
-  .hotelTitle {
-    font-size: 2rem;
-    padding: 0 20px;
-  }
+  .hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 
-  img {
-    width: 15%;
+    margin-top: 1rem;
+
+    .hotelTitle {
+      font-size: 2rem;
+    }
+
+    .hotelList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: #000;
+        text-decoration: none;
+        font-size: 1.2rem;
+
+        padding: 0.25rem 0.5rem;
+        border-top: 2px solid #ced9f4;
+        border-bottom: 3px solid #ced9f4;
+      }
+    }
   }
 
   .imageContainer {
+    display: flex;
+    justify-content: center;
+
     width: 100%;
-    overflow: hidden;
+    margin-top: 2rem;
+
     img {
       width: 30%;
-      float: left;
     }
   }
 }

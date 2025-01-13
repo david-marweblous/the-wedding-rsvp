@@ -22,16 +22,9 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
       <div className={styles.imageContainer}>
         {gallery.map((imageData, idx) => {
           let id = '';
-          if (idx === 0) {
-            id = styles.left;
-          }
-          if (idx === 1) {
-            id = '';
-          }
-          if (idx === 2) {
-            id = styles.right;
-          }
-          console.log(id);
+          if (idx === 0) id = styles.left;
+          if (idx === 2) id = styles.right;
+
           return (
             <img
               className={cn([styles.image, id])}

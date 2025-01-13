@@ -1,0 +1,53 @@
+.timelineStyled {
+  background-color: blue;
+  margin: 0 auto;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 3px 1fr;
+  font-family: sans-serif;
+  color: #000000;
+}
+.timelineStyled .timelineRow {
+  display: flex;
+  align-items: center;
+}
+.timelineStyled .timelineRow.odd {
+  flex-direction: row-reverse;
+}
+.timelineStyled .timelineComponent {
+  margin: 0 20px 20px 20px;
+}
+.timelineStyled .timelineDateRight {
+  align-items: right;
+}
+.timelineStyled .timelineMiddle {
+  position: relative;
+  background-color: #ffffff;
+  height: 100%;
+  width: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timelineStyled .timelinePoint {
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.timelineStyled .timelineComponentImg {
+  height: 300px;
+  width: 300px;
+}
+.timelineStyled .timelineComponentImg img {
+  width: 5rem;
+}
+.timelineStyled .timelineTitle {
+  margin: 0;
+  font-size: 1.15em;
+}
+.timelineStyled .timelinePointBottom {
+  top: initial;
+  bottom: 0;
+}/*# sourceMappingURL=2.css.map */
