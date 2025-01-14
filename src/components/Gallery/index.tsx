@@ -20,18 +20,8 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
         want the rest of your life start as soon as possible
       </p>
       <div className={styles.imageContainer}>
-        {gallery.map((imageData, idx) => {
-          let id = '';
-          if (idx === 0) id = styles.left;
-          if (idx === 2) id = styles.right;
-
-          return (
-            <img
-              className={cn([styles.image, id])}
-              src={imageData.src}
-              alt={imageData.alt}
-            />
-          );
+        {gallery.map(imageData => {
+          return <img className={styles.image} src={imageData.src} alt={imageData.alt} />;
         })}
       </div>
     </div>

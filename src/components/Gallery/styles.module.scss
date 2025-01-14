@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 
   font-size: 30px;
   margin: 20vh auto;
@@ -15,35 +16,26 @@
   color: black;
 
   .galleryTitle {
-    font-size: 4rem;
+    font-size: 3rem;
     @include parisienne-font;
   }
   .gallerySubTitle {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     padding: 0 1rem;
     @include parisienne-font;
   }
 
   .imageContainer {
-    margin: 200px auto;
+    margin: 100px auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
   }
 
   .image {
-    width: 200px;
+    width: 100%;
     height: auto;
-  }
-
-  .left {
-    transform: rotate(-10deg);
-  }
-
-  .right {
-    transform: rotate(10deg);
   }
 }

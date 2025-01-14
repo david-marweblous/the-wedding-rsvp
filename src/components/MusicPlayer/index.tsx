@@ -24,7 +24,7 @@ const MusicPlayer: React.FC = () => {
   return (
     <div className={styles.musicPlayerStyled}>
       {/* <h3>Now Playing: Your Song</h3> */}
-      <audio ref={audioRef} src="/music/song.mp3" preload="auto" />
+      <audio ref={audioRef} src="/media/music/song.mp3" preload="auto" />
       <div>
         <button onClick={togglePlayPause}>
           {!isPlaying ? (

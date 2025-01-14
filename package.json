@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.0.3",
+    "next": "^15.1.4",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "sass": "^1.80.6"
+    "sass": "^1.80.6",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
