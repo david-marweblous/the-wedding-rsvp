@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  background-color: rgba(206, 217, 244, 0.4666666667);
 }
 .timelineStyled .timelineComponent {
   display: flex;
@@ -16,7 +17,7 @@
 .timelineStyled .timelineComponent .time {
   font-size: 1.75rem;
   font-weight: bold;
-  color: #ced9f4;
+  color: #9db4ef;
   margin-top: 1.5rem;
 }
 .timelineStyled .timelineComponent .text {
@@ -25,4 +26,10 @@
 .timelineStyled .squiggle {
   width: 5rem;
   transform: rotate(-45deg);
+}
+.timelineStyled h2 {
+  font-size: 3rem;
+  font-family: Parisienne, cursive;
+  font-weight: 400;
+  font-style: normal;
 }/*# sourceMappingURL=styles.module.css.map */

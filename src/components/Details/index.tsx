@@ -5,13 +5,15 @@ interface Iurl {
   text: string;
 }
 
+interface Iimages {
+  src: string;
+  alt?: string;
+}
+
 interface DetailsProps {
   groomName: string;
   brideName: string;
-  img: {
-    src: string;
-    alt?: string;
-  };
+  img: Iimages[];
   title: string;
   subtitle: string;
   text: string;
@@ -22,7 +24,7 @@ interface DetailsProps {
 export const Details: React.FC<DetailsProps> = data => {
   return (
     <div className={styles.detailsStyled}>
-      <img className={styles.detailsImage} src={data.img.src} alt={data.img.alt} />
+      <img className={styles.detailsImage} src={data.img[0].src} alt={data.img[0].alt} />
 
       <div className={styles.detailsNames}>
         <p>{data.groomName}</p>
@@ -38,6 +40,7 @@ export const Details: React.FC<DetailsProps> = data => {
         <p className={styles.address}>{data.text}</p>
         <a href={data.link.url}>{data.link.text}</a>
       </div>
+      <img className={styles.detailsImage2} src={data.img[1].src} alt={data.img[1].alt} />
     </div>
   );
 };

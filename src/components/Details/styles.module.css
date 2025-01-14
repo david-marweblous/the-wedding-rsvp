@@ -11,6 +11,9 @@
   width: 25%;
   margin-bottom: -2rem;
 }
+.detailsStyled .detailsImage2 {
+  width: 100%;
+}
 .detailsStyled .detailsNames p {
   font-size: 1.5rem;
 }

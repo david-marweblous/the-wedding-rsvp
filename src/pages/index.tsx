@@ -44,10 +44,16 @@ const heroData = {
 const detailsData = {
   groomName: 'David Martin Mitchell',
   brideName: 'Rebeca Amazonas Maldonado Prieto',
-  img: {
-    src: '/media/detailsImage.png',
-    alt: 'dark flower'
-  },
+  img: [
+    {
+      src: '/media/detailsImage.png',
+      alt: 'dark flower'
+    },
+    {
+      src: '/media/detailsImage.jpg',
+      alt: 'Foto of the veniew'
+    }
+  ],
   title: 'Ceramony, Social hour, Dinner and Party',
   subtitle: 'Cortijo San Antonio',
   text: 'Ctra Málaga-Campillos,Km 32,5,29566 Casarabonela, Malaga, España',
@@ -78,7 +84,7 @@ const timelineData = [
     text: 'Dinner'
   },
   {
-    img: '/media/itinararyMusic.svg',
+    img: '/media/itinararyMusic.png',
     alt: 'wedding music',
     time: '23:00',
     text: 'Party'
