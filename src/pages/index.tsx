@@ -246,22 +246,22 @@ const giftData = {
   number: '656683979'
 };
 
-const rsvpData = {
-  name: '',
-  img: {
-    src: '/media/rsvpImage1.png',
-    alt: 'Yellow flower'
-  },
-  title: 'Confirmation of RSVP',
-  text: 'We hope to see you there!',
-  text2:
-    'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
-  text3: 'Thank you!',
-  link: {
-    url: '/rsvp',
-    text: 'Confirm your RSVP'
-  }
-};
+// const rsvpData = {
+//   name: '',
+//   img: {
+//     src: '/media/rsvpImage1.png',
+//     alt: 'Yellow flower'
+//   },
+//   title: 'Confirmation of RSVP',
+//   text: 'We hope to see you there!',
+//   text2:
+//     'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
+//   text3: 'Thank you!',
+//   link: {
+//     url: '/rsvp',
+//     text: 'Confirm your RSVP'
+//   }
+// };
 
 export default function Home() {
   return (
