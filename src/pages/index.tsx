@@ -45,7 +45,7 @@ const heroData = {
 
 const detailsData = {
   groomName: 'David Martin Mitchell',
-  brideName: 'Rebeca Amazonas Maldonado Prieto',
+  brideName: 'Rebeca Maldonado',
   img: [
     {
       src: '/media/detailsImage.png',
@@ -280,7 +280,7 @@ export default function Home() {
 
         <Countdown time={1748714400000} />
 
-        <Calendar year={2025} month={4} />
+        {/*<Calendar year={2025} month={4} />*/}
 
         <Details {...detailsData} />
 
