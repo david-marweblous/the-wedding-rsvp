@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
-import { cn } from '../utils/classname';
 
 interface IImageData {
   src: string;
@@ -21,7 +21,14 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
       </p>
       <div className={styles.imageContainer}>
         {gallery.map(imageData => {
-          return <img className={styles.image} src={imageData.src} alt={imageData.alt} />;
+          return (
+            <img
+              className={styles.image}
+              src={imageData.src}
+              alt={imageData.alt}
+              key={imageData.alt}
+            />
+          );
         })}
       </div>
     </div>

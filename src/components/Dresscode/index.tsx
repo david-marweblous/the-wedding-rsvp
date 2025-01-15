@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
 
@@ -36,7 +37,7 @@ export const Dresscode: React.FC<DresscodeProps> = data => {
       </div>
 
       {data.typeText.map(type => {
-        return <p>{type.text}</p>;
+        return <p key={type.text}>{type.text}</p>;
       })}
       <p>
         <img src={data.img[2].src} alt={data.img[2].alt} />

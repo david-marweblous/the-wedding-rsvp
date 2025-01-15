@@ -1,7 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
-
-import { cn } from '../utils/classname';
 
 interface ITimelineData {
   img: string;
@@ -19,7 +18,7 @@ export const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
     <div className={styles.timelineStyled}>
       <h2>Itinerary</h2>
       {timeline.map((event, idx) => (
-        <>
+        <div className={styles.timelineWrapper} key={idx}>
           <div className={styles.timelineComponent}>
             <img src={event.img} alt="" />
             <p className={styles.time}>{event.time} h.</p>
@@ -33,7 +32,7 @@ export const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
               alt="Separator Line"
             />
           )}
-        </>
+        </div>
       ))}
     </div>
   );

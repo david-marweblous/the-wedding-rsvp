@@ -57,7 +57,7 @@ export const Countdown: React.FC<CountdownProps> = ({ time }) => {
       <div className={styles.countdownTimer}>
         {convertTime(timeLeft).map((value, idx) => {
           return (
-            <div className={styles.countdownBlock}>
+            <div className={styles.countdownBlock} key={idx}>
               <div className={styles.blockValue}>{value}</div>
               <div className={styles.blockLegend}>{countdownLegend[idx]}</div>
             </div>

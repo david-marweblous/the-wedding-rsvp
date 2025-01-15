@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
 
@@ -27,10 +28,10 @@ export const Transport: React.FC<TransportProps> = data => {
       <h2 className={styles.galleryTitle}>{data.header}</h2>
       <p className={styles.gallerySubTitle}>{data.text}</p>
       <div className={styles.details}>
-        {data.details.map(Detail => {
+        {data.details.map(detail => {
           return (
-            <p>
-              {Detail.text} : {Detail.time}
+            <p key={detail.text}>
+              {detail.text} : {detail.time}
             </p>
           );
         })}

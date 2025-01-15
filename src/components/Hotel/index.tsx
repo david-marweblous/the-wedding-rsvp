@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styles from './styles.module.scss';
 
@@ -32,7 +33,7 @@ export const Hotel: React.FC<HotelProps> = data => {
 
       {data.details.map((detail, idx) => {
         return (
-          <div className={styles.hotel}>
+          <div className={styles.hotel} key={idx}>
             <h2 className={styles.hotelTitle} key={idx}>
               {detail.title}
             </h2>

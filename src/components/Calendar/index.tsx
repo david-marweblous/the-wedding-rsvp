@@ -15,7 +15,7 @@ const generateCalendar = (year: number, month: number): (number | null)[][] => {
   const startingDay = firstDayOfMonth.getDay(); // Day of the week of the 1st of the month
 
   // Create a 2D array to represent the calendar grid
-  let calendar: (number | null)[][] = [];
+  const calendar: (number | null)[][] = [];
   let day = 1;
 
   // Fill in empty spaces for the first row (before the first day of the month)
@@ -107,5 +107,3 @@ export const Calendar: React.FC<CalendarProps> = ({ year, month }) => {
     </div>
   );
 };
-
-export default Calendar;
