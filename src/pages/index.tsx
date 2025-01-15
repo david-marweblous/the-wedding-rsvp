@@ -15,6 +15,8 @@ import { Transport } from '@/components/Transport';
 import { Hotel } from '@/components/Hotel';
 import { Dresscode } from '@/components/Dresscode';
 import Calendar from '@/components/Calendar';
+import { Gift } from '@/components/Gift';
+import { Rsvp } from '@/components/Rsvp';
 
 // Static data
 const navLinks = [
@@ -223,6 +225,43 @@ const dresscodeData = {
   },
   footer: 'No children allowed'
 };
+const giftData = {
+  img: [
+    {
+      src: '/media/giftImage1.png',
+      alt: 'Pink flowers'
+    },
+    {
+      src: '/media/giftImage2.png',
+      alt: 'Bizum logo'
+    },
+    {
+      src: '/media/giftImage3.png',
+      alt: 'Revolut tag'
+    }
+  ],
+  title: 'Wedding gifts',
+  subtitle:
+    'Our best gift is having you with us, but if you would like to leave us a little something',
+  bank: 'ES00 0000 0000 0000 0000',
+  number: '656683979'
+};
+
+const rsvpData = {
+  img: {
+    src: '/media/rsvpImage1.png',
+    alt: 'Yellow flower'
+  },
+  title: 'Confirmation of RSVP',
+  text: 'We hope to see you there!',
+  text2:
+    'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
+  text3: 'Thank you!',
+  link: {
+    url: '/rsvp',
+    text: 'Confirm your RSVP'
+  }
+};
 
 export default function Home() {
   return (
@@ -241,7 +280,7 @@ export default function Home() {
 
         <Countdown time={1748714400000} />
 
-        {/*<Calendar year={2025} month={4} />*/}
+        <Calendar year={2025} month={4} />
 
         <Details {...detailsData} />
 
@@ -254,6 +293,10 @@ export default function Home() {
         <Hotel {...hotelData} />
 
         <Dresscode {...dresscodeData} />
+
+        <Gift {...giftData} />
+
+        <Rsvp {...rsvpData} />
       </main>
     </>
   );

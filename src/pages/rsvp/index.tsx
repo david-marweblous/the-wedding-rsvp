@@ -30,7 +30,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header links={navLinks} />
-      <h1>hello world</h1>
     </>
   );
 }

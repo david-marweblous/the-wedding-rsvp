@@ -1,0 +1,25 @@
+.giftStyled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.giftStyled img {
+  width: 35%;
+}
+.giftStyled .title {
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.giftStyled p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0 20px;
+}/*# sourceMappingURL=styles.module.css.map */

@@ -8,12 +8,12 @@
   background-color: #cdcabd;
   border: 10px solid;
   border-color: black;
-  font-size: 30px;
+  font-size: 1.5rem;
   width: 100%;
 }
 .calendarStyled td {
   position: relative;
-  padding: 30px;
+  padding: 10px;
 }
 .calendarStyled .calendarHeader {
   font-family: "Parisienne", cursive;
