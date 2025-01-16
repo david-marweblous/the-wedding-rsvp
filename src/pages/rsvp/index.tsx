@@ -1,15 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
-/* eslint-disable react-hooks/exhaustive-deps */
-// Style imports
-//import styles from '@/styles/Home.module.scss';
+// Global imports
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { useCookies } from '@/hooks/useCookies';
+import { Suspense, useEffect, useState } from 'react';
 
+// Component imports
 import { Header } from '@/components/Header';
 import { Loader } from '@/components/Loader';
+
+// Hook imports
+import { useCookies } from '@/hooks/useCookies';
+
+// Style imports
+import styles from '../../styles/Home.module.scss';
 
 const tmpToken =
   '22716c2ba85c4ac04223310d4bbed5630944324a856ad62f184c4c9800233a09238c4699a0883dcdb65976bc99f663ef2a9d0c175a2d41a738de742dda09b7a3240126bcfb487898a3cd0d737e7bc0fdf3db73b4f238fe9e6c6e9dd21181bc1df0a02355f418d6c45a07d66c442d2f82c5b8c747465c435de60f604cf3fca225';
@@ -30,15 +35,38 @@ const navLinks = [
   }
 ];
 
+interface IGuest {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+
+  name: string;
+  surname: string;
+  rsvp?: boolean;
+  message?: string;
+}
+
+interface IParty {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+
+  guests: IGuest[];
+}
+
 export default function RSVP() {
   const cookies = useCookies();
   const router = useRouter();
-  const [partyData, setPartyData] = useState([]);
+  const [partyData, setPartyData] = useState<IParty>();
 
   const [partyId, setPartyId] = useState<string>();
 
+  // Get invite from cookies
   useEffect(() => {
-    // Get invite from cookies
     const inviteCookie = cookies.get('inviteCode');
     console.log('inviteCookie', inviteCookie);
 
@@ -67,6 +95,27 @@ export default function RSVP() {
     }
   }, [partyId]);
 
+  const partyMemberNames = () => {
+    return partyData?.guests.map((guest, idx) => {
+      let joiner = '';
+      switch (idx) {
+        case partyData.guests.length - 2: {
+          joiner = ' & ';
+          break;
+        }
+        case partyData.guests.length - 1: {
+          joiner = '.';
+          break;
+        }
+        default: {
+          joiner = ', ';
+          break;
+        }
+      }
+      return guest.name + joiner;
+    });
+  };
+
   return (
     <>
       <Head>
@@ -76,7 +125,27 @@ export default function RSVP() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header links={navLinks} />
-      {!partyData ? <Loader /> : <></>}
+      <Suspense fallback={<Loader />}>
+        <div className={styles.mainView}>
+          <div className="">
+            <h1>Welcome</h1>
+            <p>{partyMemberNames()}</p>
+          </div>
+          <div>
+            {partyData?.guests.map(guest => {
+              return (
+                <div key={guest.name}>
+                  <div>
+                    <p>{guest.name + ' ' + guest.surname}</p>
+                    <input type="checkbox" name="" id="" checked={guest.rsvp} />
+                  </div>
+                  <input type="text" value={guest.message || ''} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Suspense>
     </>
   );
 }
