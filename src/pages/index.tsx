@@ -17,6 +17,7 @@ import { Hotel } from '@/components/Hotel';
 import { Dresscode } from '@/components/Dresscode';
 import { Gift } from '@/components/Gift';
 import { useEffect } from 'react';
+import { useCookies } from '@/hooks/useCookies';
 //import { FormRsvp } from '@/components/FormRsvp';
 
 // Static data
@@ -267,9 +268,12 @@ const giftData = {
 
 export default function Home() {
   const searchParams = useSearchParams();
+  const cookies = useCookies();
 
   useEffect(() => {
-    console.log(searchParams.get('invite'));
+    const inviteCode = searchParams.get('invite');
+    console.log('inviteCode: ', inviteCode);
+    if (inviteCode) cookies.set('inviteCode', inviteCode);
   });
 
   return (
