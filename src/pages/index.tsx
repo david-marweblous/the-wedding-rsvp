@@ -1,5 +1,6 @@
 // Global imports
 import Head from 'next/head';
+import { useSearchParams } from 'next/navigation';
 
 // Style imports
 import styles from '@/styles/Home.module.scss';
@@ -15,6 +16,7 @@ import { Transport } from '@/components/Transport';
 import { Hotel } from '@/components/Hotel';
 import { Dresscode } from '@/components/Dresscode';
 import { Gift } from '@/components/Gift';
+import { useEffect } from 'react';
 //import { FormRsvp } from '@/components/FormRsvp';
 
 // Static data
@@ -264,6 +266,12 @@ const giftData = {
 // };
 
 export default function Home() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    console.log(searchParams.get('invite'));
+  });
+
   return (
     <>
       <Head>

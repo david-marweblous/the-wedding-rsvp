@@ -3,6 +3,10 @@
 import Head from 'next/head';
 
 import { Header } from '@/components/Header';
+import { useEffect, useState } from 'react';
+
+const tmpToken =
+  '22716c2ba85c4ac04223310d4bbed5630944324a856ad62f184c4c9800233a09238c4699a0883dcdb65976bc99f663ef2a9d0c175a2d41a738de742dda09b7a3240126bcfb487898a3cd0d737e7bc0fdf3db73b4f238fe9e6c6e9dd21181bc1df0a02355f418d6c45a07d66c442d2f82c5b8c747465c435de60f604cf3fca225';
 
 // Static data
 const navLinks = [
@@ -21,6 +25,26 @@ const navLinks = [
 ];
 
 export default function Home() {
+  const [guestData, setGuestData] = useState([]);
+
+  useEffect(() => {
+    const guestDataFetch = async () => {
+      const response = await fetch('http://localhost:1337/api/guests', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${tmpToken}`
+        }
+      });
+      const data = await response.json();
+      setGuestData(data);
+    };
+    guestDataFetch();
+  }, []);
+
+  useEffect(() => {
+    console.log('guestData: ', guestData);
+  }, [guestData]);
+
   return (
     <>
       <Head>
