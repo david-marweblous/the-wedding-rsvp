@@ -4,7 +4,7 @@
 // Global imports
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Component imports
 import { Header } from '@/components/Header';
@@ -125,7 +125,9 @@ export default function RSVP() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header links={navLinks} />
-      <Suspense fallback={<Loader />}>
+      {!partyData ? (
+        <Loader />
+      ) : (
         <div className={styles.mainView}>
           <div className="">
             <h1>Welcome</h1>
@@ -145,7 +147,7 @@ export default function RSVP() {
             })}
           </div>
         </div>
-      </Suspense>
+      )}
     </>
   );
 }
