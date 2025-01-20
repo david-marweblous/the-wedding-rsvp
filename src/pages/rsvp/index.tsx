@@ -10,6 +10,9 @@ import { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { Loader } from '@/components/Loader';
 
+// Type imports
+import { IGuest, IParty } from '@/types';
+
 // Hook imports
 import { useCookies } from '@/hooks/useCookies';
 
@@ -17,7 +20,7 @@ import { useCookies } from '@/hooks/useCookies';
 import styles from '../../styles/Home.module.scss';
 
 const tmpToken =
-  '22716c2ba85c4ac04223310d4bbed5630944324a856ad62f184c4c9800233a09238c4699a0883dcdb65976bc99f663ef2a9d0c175a2d41a738de742dda09b7a3240126bcfb487898a3cd0d737e7bc0fdf3db73b4f238fe9e6c6e9dd21181bc1df0a02355f418d6c45a07d66c442d2f82c5b8c747465c435de60f604cf3fca225';
+  'c359b916042b605b9208a5cd996d58b87e3d8df1eadf721aaab0108f3e523bbcb4ea2ba0a1feafb0321d2d98ceb636ad6c631294d2af0b4ab673aa60e6b1327298c20a3feb9586b6ce877f25f93c28f1d060df4dc328e467de709a3dcc9ebf660d517db5e4d4cc0d141329f062b87f8292f6d9ed3af3ab9db00996de063f4181';
 
 // Static data
 const navLinks = [
@@ -35,35 +38,13 @@ const navLinks = [
   }
 ];
 
-interface IGuest {
-  id: number;
-  documentId: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-
-  name: string;
-  surname: string;
-  rsvp?: boolean;
-  message?: string;
-}
-
-interface IParty {
-  id: number;
-  documentId: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-
-  guests: IGuest[];
-}
-
 export default function RSVP() {
   const cookies = useCookies();
   const router = useRouter();
+  const [partyId, setPartyId] = useState<string>();
   const [partyData, setPartyData] = useState<IParty>();
 
-  const [partyId, setPartyId] = useState<string>();
+  const [formData, setFormData] = useState();
 
   // Get invite from cookies
   useEffect(() => {
@@ -74,6 +55,7 @@ export default function RSVP() {
     if (inviteCookie) setPartyId(inviteCookie);
   }, []);
 
+  // Fetch and set party data
   useEffect(() => {
     if (partyId) {
       const getPartyData = async () => {
@@ -88,12 +70,22 @@ export default function RSVP() {
         );
         const dataJson = await partyResponse.json();
         setPartyData(dataJson.data);
-        console.log(dataJson.data);
+
+        // Initialize formData with the party data
+        const initialFormData = dataJson.data?.guests.reduce((acc, guest: IGuest) => {
+          acc[guest.id] = { rsvp: guest.rsvp, message: guest.message || '' };
+          return acc;
+        }, {});
+        setFormData(initialFormData);
       };
 
       getPartyData();
     }
   }, [partyId]);
+
+  useEffect(() => {
+    console.log('Formdata changes:', formData);
+  }, [formData]);
 
   const partyMemberNames = () => {
     return partyData?.guests.map((guest, idx) => {
@@ -114,6 +106,48 @@ export default function RSVP() {
       }
       return guest.name + joiner;
     });
+  };
+
+  const handleInputChange = (guestId: number, field: string, value: string | boolean) => {
+    setFormData(prevState => ({
+      ...prevState,
+      [guestId]: {
+        ...prevState[guestId],
+        [field]: value
+      }
+    }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:1337/api/parties/${partyId}?populate=*`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${tmpToken}`
+          },
+          body: JSON.stringify({
+            data: {
+              guests: partyData?.guests.map(guest => ({
+                id: guest.id,
+                message: formData[guest.id].message,
+                rsvp: formData[guest.id].rsvp ? new Date() : null
+              }))
+            }
+          })
+        }
+      );
+
+      if (response.ok) {
+        console.log('Update Response:', await response.json());
+      } else {
+        console.error('Error updating RSVP:', await response.text());
+      }
+    } catch (error) {
+      console.error('Error submitting data:', error);
+    }
   };
 
   return (
@@ -139,12 +173,27 @@ export default function RSVP() {
                 <div key={guest.name}>
                   <div>
                     <p>{guest.name + ' ' + guest.surname}</p>
-                    <input type="checkbox" name="" id="" checked={guest.rsvp} />
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      checked={formData[guest.id].rsvp}
+                      onChange={e =>
+                        handleInputChange(guest.id, 'rsvp', e.target.checked)
+                      }
+                    />
                   </div>
-                  <input type="text" value={guest.message || ''} />
+                  <input
+                    type="text"
+                    value={formData[guest.id].message}
+                    onChange={e => handleInputChange(guest.id, 'message', e.target.value)}
+                  />
                 </div>
               );
             })}
+          </div>
+          <div>
+            <button onClick={handleSubmit}>Enviar</button>
           </div>
         </div>
       )}

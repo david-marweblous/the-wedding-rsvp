@@ -1,5 +1,6 @@
 // Global imports
 import Head from 'next/head';
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 // Style imports
@@ -16,9 +17,10 @@ import { Transport } from '@/components/Transport';
 import { Hotel } from '@/components/Hotel';
 import { Dresscode } from '@/components/Dresscode';
 import { Gift } from '@/components/Gift';
-import { useEffect } from 'react';
-import { useCookies } from '@/hooks/useCookies';
 //import { FormRsvp } from '@/components/FormRsvp';
+
+// Hook imports
+import { useCookies } from '@/hooks/useCookies';
 
 // Static data
 const navLinks = [
