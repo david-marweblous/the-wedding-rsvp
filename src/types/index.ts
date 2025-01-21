@@ -13,7 +13,7 @@ export interface IGuest {
 
   name: string;
   surname: string;
-  rsvp?: boolean;
+  rsvp?: Date;
   message?: string;
 }
 

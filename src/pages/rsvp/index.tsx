@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 // Component imports
 import { Header } from '@/components/Header';
 import { Loader } from '@/components/Loader';
+import { RSVPHero } from '@/components/RSVPHero';
 
 // Type imports
 import { IGuest, IParty } from '@/types';
@@ -38,13 +39,20 @@ const navLinks = [
   }
 ];
 
+interface IFormData {
+  [key: string]: {
+    rsvp?: Date;
+    message?: string;
+  };
+}
+
 export default function RSVP() {
   const cookies = useCookies();
   const router = useRouter();
   const [partyId, setPartyId] = useState<string>();
   const [partyData, setPartyData] = useState<IParty>();
 
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState<IFormData>({});
 
   // Get invite from cookies
   useEffect(() => {
@@ -72,10 +80,13 @@ export default function RSVP() {
         setPartyData(dataJson.data);
 
         // Initialize formData with the party data
-        const initialFormData = dataJson.data?.guests.reduce((acc, guest: IGuest) => {
-          acc[guest.id] = { rsvp: guest.rsvp, message: guest.message || '' };
-          return acc;
-        }, {});
+        const initialFormData = dataJson.data?.guests.reduce(
+          (acc: IFormData, guest: IGuest) => {
+            acc[guest.id] = { rsvp: guest.rsvp, message: guest.message || '' };
+            return acc;
+          },
+          {}
+        );
         setFormData(initialFormData);
       };
 
@@ -138,7 +149,7 @@ export default function RSVP() {
           });
         });
 
-        const results = await Promise.all(updatePromises);
+        const results = await Promise.all(updatePromises ?? []);
 
         if (results.every(res => res.ok)) {
           console.log('All guests updated successfully');
@@ -164,10 +175,8 @@ export default function RSVP() {
         <Loader />
       ) : (
         <div className={styles.mainView}>
-          <div className="">
-            <h1>Welcome</h1>
-            <p>{partyMemberNames()}</p>
-          </div>
+          <RSVPHero names={partyMemberNames() as string[]} />
+
           <div>
             {partyData?.guests.map(guest => {
               return (
@@ -178,7 +187,7 @@ export default function RSVP() {
                       type="checkbox"
                       name=""
                       id=""
-                      checked={formData[guest.id].rsvp}
+                      checked={formData?.[guest.id].rsvp ? true : false}
                       onChange={e =>
                         handleInputChange(guest.id, 'rsvp', e.target.checked)
                       }
@@ -186,13 +195,14 @@ export default function RSVP() {
                   </div>
                   <input
                     type="text"
-                    value={formData[guest.id].message}
+                    value={formData?.[guest.id].message}
                     onChange={e => handleInputChange(guest.id, 'message', e.target.value)}
                   />
                 </div>
               );
             })}
           </div>
+
           <div>
             <button onClick={handleSubmit}>Enviar</button>
           </div>
