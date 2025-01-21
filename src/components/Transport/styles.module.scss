@@ -23,7 +23,7 @@
   .gallerySubTitle {
     font-size: 1.5rem;
     color: #54595f;
-    @include parisienne-font;
+    padding: 0 20px;
   }
 
   .details {
@@ -34,7 +34,6 @@
 
     font-size: 1.5rem;
     font-weight: 200;
-    text-transform: uppercase;
 
     margin-top: 1rem;
   }

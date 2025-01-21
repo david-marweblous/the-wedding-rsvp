@@ -14,11 +14,11 @@
 
   .title {
     font-size: 3rem;
+    @include parisienne-font;
   }
 
   .subtitle {
     font-size: 1.5rem;
-    @include parisienne-font;
     padding: 0 20px;
   }
 

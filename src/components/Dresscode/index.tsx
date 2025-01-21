@@ -21,7 +21,6 @@ interface DresscodeProps {
   img: Iimages[];
   typeText: Itypes[];
   link: Iurl;
-  footer: string;
 }
 
 export const Dresscode: React.FC<DresscodeProps> = data => {
@@ -40,7 +39,7 @@ export const Dresscode: React.FC<DresscodeProps> = data => {
         return <p key={type.text}>{type.text}</p>;
       })}
       <p>
-        <img src={data.img[2].src} alt={data.img[2].alt} />
+        <img className={styles.pinter} src={data.img[2].src} alt={data.img[2].alt} />
         <a href={data.link.url}>{data.link.text}</a>
       </p>
 
@@ -49,8 +48,6 @@ export const Dresscode: React.FC<DresscodeProps> = data => {
         <img src={data.img[3].src} alt={data.img[3].alt} />
         <div className={styles.divider}></div>
       </div>
-
-      <p>{data.footer}</p>
     </div>
   );
 };

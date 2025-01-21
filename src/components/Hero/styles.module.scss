@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  margin-bottom: 100px;
 
   color: #000;
 
@@ -29,13 +30,42 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+    .heroInitials {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      font-size: 55px;
+
+      span {
+        display: inline-block;
+        position: relative;
+        @include parisienne-font;
+
+        &:nth-child(1) {
+          top: 0;
+          font-weight: bolder;
+        }
+
+        &:nth-child(2) {
+          top: 30px;
+          font-weight: bolder;
+        }
+
+        &:nth-child(3) {
+          top: 50px;
+          font-weight: bolder;
+        }
+      }
+    }
   }
 
   .heroTitle {
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 
-    font-size: 2.5rem;
+    font-size: 3rem;
     @include parisienne-font;
   }
 

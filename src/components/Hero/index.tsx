@@ -7,7 +7,7 @@ interface IImage {
 }
 
 interface HeroProps {
-  img: IImage;
+  img: IImage[];
   title: string;
   subTitle: string;
 }
@@ -18,10 +18,15 @@ export const Hero: React.FC<HeroProps> = ({ img, subTitle, title }) => {
   return (
     <div className={styles.heroStyled}>
       <div className={styles.heroImage}>
-        <img src={img.src} alt={img.alt} />
-        <p>
-          {names[0].slice(0, 1)} / {names[1].slice(0, 1)}
-        </p>
+        <img src={img[0].src} alt={img[0].alt} />
+        <div className={styles.heroInitials}>
+          <span>{names[0].slice(0, 1)}</span>
+          <span>/</span>
+          <span>{names[1].slice(0, 1)}</span>
+        </div>
+      </div>
+      <div className={styles.heroImage}>
+        <img src={img[1].src} alt={img[1].alt} />
       </div>
       <div className={styles.heroTitle}>{title}</div>
       <div className={styles.heroSubtitle}>{subTitle}</div>

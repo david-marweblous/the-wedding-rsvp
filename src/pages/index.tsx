@@ -39,12 +39,18 @@ const navLinks = [
 ];
 
 const heroData = {
-  img: {
-    src: '/media/heroFlowers.png',
-    alt: 'awsome hero image'
-  },
+  img: [
+    {
+      src: '/media/heroFlowers.png',
+      alt: 'awsome hero image'
+    },
+    {
+      src: '/media/heroImage.jpg',
+      alt: 'picture of the happy couple'
+    }
+  ],
   title: 'David & Rebeca',
-  subTitle: '31 May 25'
+  subTitle: '31 May 2025'
 };
 
 const detailsData = {
@@ -63,7 +69,7 @@ const detailsData = {
   title: 'Ceramony, Social hour, Dinner and Party',
   subtitle: 'Cortijo San Antonio',
   text: 'Ctra Málaga-Campillos,Km 32,5,29566 Casarabonela, Malaga, España',
-  time: '6:00 PM',
+  time: '6:00 pm',
   link: {
     url: 'https://www.google.com/maps/place/Cortijo+San+Antonio/@36.814201,-4.7913,17z/data=!3m1!4b1!4m9!3m8!1s0xd72c1207284ea3d:0x5ab8c1ab1bfdeb83!5m2!4m1!1i2!8m2!3d36.814201!4d-4.7913!16s%2Fg%2F1v8j1svx?entry=ttu&g_ep=EgoyMDI1MDEwNy4wIKXMDSoASAFQAw%3D%3D',
     text: 'See directions'
@@ -99,7 +105,7 @@ const timelineData = [
     img: '/media/itinararyCar.png',
     alt: 'wedding car',
     time: '04:00',
-    text: 'Fek off free loaders'
+    text: 'Party ends'
   }
 ];
 
@@ -134,15 +140,15 @@ const transportData = {
   details: [
     {
       text: 'Depart',
-      time: '6:00 PM'
+      time: '6:00 pm'
     },
     {
       text: 'First return',
-      time: '1:00 AM'
+      time: '1:00 am'
     },
     {
       text: 'Second return',
-      time: '4:00 AM'
+      time: '4:00 am'
     }
   ],
   pickup: 'Pick up point is:',
@@ -150,7 +156,7 @@ const transportData = {
 };
 
 const hotelData = {
-  text: 'Sabemos que muchos venis desde diferentes lugares y paises asi que aqui te dejamos una lista de hotels para ayuarte con la busquedad.',
+  text: 'We know that many of you come from different places and countries so here we leave you a list of hotels to help you with your search.',
   details: [
     {
       title: 'Hotels Benalmádena',
@@ -226,8 +232,7 @@ const dresscodeData = {
   link: {
     url: 'url here',
     text: 'Here are some ideas'
-  },
-  footer: 'No children allowed'
+  }
 };
 const giftData = {
   img: [
@@ -257,7 +262,7 @@ const rsvpData = {
     src: '/media/rsvpImage1.png',
     alt: 'Yellow flower'
   },
-  title: 'Confirmation of RSVP',
+  title: 'Confirmation your assistance',
   text: 'We hope to see you there!',
   text2:
     'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
