@@ -17,7 +17,7 @@ import { Transport } from '@/components/Transport';
 import { Hotel } from '@/components/Hotel';
 import { Dresscode } from '@/components/Dresscode';
 import { Gift } from '@/components/Gift';
-//import { FormRsvp } from '@/components/FormRsvp';
+import { Rsvp } from '@/components/Rsvp';
 
 // Hook imports
 import { useCookies } from '@/hooks/useCookies';
@@ -251,22 +251,22 @@ const giftData = {
   number: '656683979'
 };
 
-// const rsvpData = {
-//   name: '',
-//   img: {
-//     src: '/media/rsvpImage1.png',
-//     alt: 'Yellow flower'
-//   },
-//   title: 'Confirmation of RSVP',
-//   text: 'We hope to see you there!',
-//   text2:
-//     'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
-//   text3: 'Thank you!',
-//   link: {
-//     url: '/rsvp',
-//     text: 'Confirm your RSVP'
-//   }
-// };
+const rsvpData = {
+  name: '',
+  img: {
+    src: '/media/rsvpImage1.png',
+    alt: 'Yellow flower'
+  },
+  title: 'Confirmation of RSVP',
+  text: 'We hope to see you there!',
+  text2:
+    'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
+  text3: 'Thank you!',
+  link: {
+    url: '/rsvp',
+    text: 'Confirm your RSVP'
+  }
+};
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -310,7 +310,7 @@ export default function Home() {
 
         <Gift {...giftData} />
 
-        {/* <FormRsvp {...rsvpData} /> */}
+        {<Rsvp {...rsvpData} />}
       </main>
     </>
   );
