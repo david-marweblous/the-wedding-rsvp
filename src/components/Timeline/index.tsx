@@ -15,7 +15,7 @@ interface TimelineProps {
 
 export const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
   return (
-    <div className={styles.timelineStyled}>
+    <div id="itinerary" className={styles.timelineStyled}>
       <h2>Itinerary</h2>
       {timeline.map((event, idx) => (
         <div className={styles.timelineWrapper} key={idx}>

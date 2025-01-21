@@ -34,8 +34,8 @@ const navLinks = [
     text: 'RSVP'
   },
   {
-    href: '#itinary',
-    text: 'Itinary'
+    href: '#itinerary',
+    text: 'Itinerary'
   }
 ];
 
@@ -231,7 +231,7 @@ const dresscodeData = {
     }
   ],
   link: {
-    url: 'url here',
+    url: 'https://pin.it/2zfKv6wM1',
     text: 'Here are some ideas'
   }
 };
@@ -275,9 +275,14 @@ const rsvpData = {
 };
 
 const sliderImages = [
-  '/media/heroImage.jpg',
-  '/media/heroImage2.jpg',
-  '/media/heroImage.jpg'
+  '/media/sliderImage.jpg',
+  '/media/sliderImage2.jpg',
+  '/media/sliderImage3.jpg',
+  '/media/sliderImage4.jpg',
+  '/media/sliderImage5.jpg',
+  '/media/sliderImage6.jpg',
+  '/media/sliderImage7.jpg',
+  '/media/sliderImage8.jpg'
 ];
 
 export default function Home() {

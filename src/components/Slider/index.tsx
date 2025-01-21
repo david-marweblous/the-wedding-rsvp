@@ -40,9 +40,6 @@ const PhotoSlider: React.FC<PhotoSliderProps> = ({ images }) => {
 
   return (
     <div className={styles.photoSlider}>
-      <button className={styles.prev} onClick={goToPrev}>
-        &lt;
-      </button>
       <div className={styles.imageWrapper}>
         {images.map((image, index) => (
           <img
@@ -53,9 +50,6 @@ const PhotoSlider: React.FC<PhotoSliderProps> = ({ images }) => {
           />
         ))}
       </div>
-      <button className={styles.next} onClick={goToNext}>
-        &gt;
-      </button>
     </div>
   );
 };
