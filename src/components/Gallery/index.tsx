@@ -19,18 +19,6 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
         When you realize that you want to spend the rest of your life with one person, you
         want the rest of your life start as soon as possible
       </p>
-      <div className={styles.imageContainer}>
-        {gallery.map(imageData => {
-          return (
-            <img
-              className={styles.image}
-              src={imageData.src}
-              alt={imageData.alt}
-              key={imageData.alt}
-            />
-          );
-        })}
-      </div>
     </div>
   );
 };

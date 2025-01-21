@@ -21,6 +21,7 @@ import { Rsvp } from '@/components/Rsvp';
 
 // Hook imports
 import { useCookies } from '@/hooks/useCookies';
+import PhotoSlider from '@/components/Slider';
 
 // Static data
 const navLinks = [
@@ -105,7 +106,7 @@ const timelineData = [
     img: '/media/itinararyCar.png',
     alt: 'wedding car',
     time: '04:00',
-    text: 'Party ends'
+    text: 'Time to say goodbye'
   }
 ];
 
@@ -273,6 +274,12 @@ const rsvpData = {
   }
 };
 
+const sliderImages = [
+  '/media/heroImage.jpg',
+  '/media/heroImage2.jpg',
+  '/media/heroImage.jpg'
+];
+
 export default function Home() {
   const searchParams = useSearchParams();
   const cookies = useCookies();
@@ -306,6 +313,7 @@ export default function Home() {
         <Timeline timeline={timelineData} />
 
         <Gallery gallery={imageData} />
+        <PhotoSlider images={sliderImages} />
 
         <Transport {...transportData} />
 
@@ -315,7 +323,7 @@ export default function Home() {
 
         <Gift {...giftData} />
 
-        {<Rsvp {...rsvpData} />}
+        <Rsvp {...rsvpData} />
       </main>
     </>
   );

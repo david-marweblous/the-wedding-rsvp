@@ -1,0 +1,80 @@
+// styles.module.scss
+
+$button-size: 30px;
+$button-color: rgba(0, 0, 0, 0.5);
+$text-color: white;
+$slider-width: 100%;
+$slider-max-width: 100%;
+
+.photoSlider {
+  position: relative;
+  width: $slider-width;
+  max-width: $slider-max-width;
+  margin: 100px auto;
+  overflow: hidden;
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $button-color;
+    color: $text-color;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    width: $button-size;
+    height: $button-size;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    visibility: hidden;
+  }
+
+  img.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  $button-size: 25px;
+
+  .prev,
+  .next {
+    width: $button-size;
+    height: $button-size;
+    font-size: 18px;
+    padding: 5px;
+  }
+}
