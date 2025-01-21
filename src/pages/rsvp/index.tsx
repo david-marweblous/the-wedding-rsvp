@@ -119,34 +119,35 @@ export default function RSVP() {
   };
 
   const handleSubmit = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:1337/api/parties/${partyId}?populate=*`,
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${tmpToken}`
-          },
-          body: JSON.stringify({
+    if (formData) {
+      try {
+        const updatePromises = partyData?.guests.map(guest => {
+          const payload = {
             data: {
-              guests: partyData?.guests.map(guest => ({
-                id: guest.id,
-                message: formData[guest.id].message,
-                rsvp: formData[guest.id].rsvp ? new Date() : null
-              }))
+              rsvp: formData[guest.id].rsvp ? new Date() : null,
+              message: formData[guest.id].message
             }
-          })
-        }
-      );
+          };
+          return fetch(`http://localhost:1337/api/guests/${guest.documentId}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${tmpToken}`
+            },
+            body: JSON.stringify(payload)
+          });
+        });
 
-      if (response.ok) {
-        console.log('Update Response:', await response.json());
-      } else {
-        console.error('Error updating RSVP:', await response.text());
+        const results = await Promise.all(updatePromises);
+
+        if (results.every(res => res.ok)) {
+          console.log('All guests updated successfully');
+        } else {
+          console.error('Some updates failed', results);
+        }
+      } catch (error) {
+        console.error('Error submitting data:', error);
       }
-    } catch (error) {
-      console.error('Error submitting data:', error);
     }
   };
 
