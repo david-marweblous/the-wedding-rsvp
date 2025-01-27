@@ -11,7 +11,7 @@ interface GalleryProps {
   gallery: IImageData[];
 }
 
-export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
+export const Gallery: React.FC<GalleryProps> = ({}) => {
   return (
     <div className={styles.galleryStyled}>
       <h2 className={styles.galleryTitle}>Photo gallery</h2>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import MusicPlayer from '../MusicPlayer';
 import styles from './styles.module.scss';
 

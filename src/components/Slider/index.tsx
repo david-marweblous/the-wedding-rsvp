@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 
