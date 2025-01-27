@@ -10,14 +10,12 @@ const main = async () => {
   });
   const partyData = await partyResponse.json();
 
-  console.log('partyData:', JSON.stringify(partyData, null, 2));
-
   const links = [];
   partyData.data.forEach(party =>
     links.push({
       partyId: party.documentId,
       guest: `${party.guests[0].name} ${party.guests[0].surname}`,
-      inviteLink: `https://weddingURL.com?invite=${party.documentId}`
+      inviteLink: `https://davidandrebecaswedding.com?invite=${party.documentId}`
     })
   );
 
