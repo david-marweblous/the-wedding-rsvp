@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 
 interface CountdownProps {
   time: number;
+  text: string;
 }
 
 const countdownLegend = ['days', 'hours', 'minutes', 'seconds'];
@@ -17,7 +18,7 @@ const convertTime = (time: number): number[] => {
   return [days, hours, minutes, seconds];
 };
 
-export const Countdown: React.FC<CountdownProps> = ({ time }) => {
+export const Countdown: React.FC<CountdownProps> = ({ time, text }) => {
   const [timeLeft, setTimeLeft] = useState<number>(time);
   const [mounted, setMounted] = useState<boolean>(false); // Track if the component is mounted
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -53,7 +54,7 @@ export const Countdown: React.FC<CountdownProps> = ({ time }) => {
 
   return (
     <div className={styles.countdownStyled}>
-      <h1 className={styles.countdownHeader}>Cuanto falta para la boda</h1>
+      <h1 className={styles.countdownHeader}>{text}</h1>
       <div className={styles.countdownTimer}>
         {convertTime(timeLeft).map((value, idx) => {
           return (

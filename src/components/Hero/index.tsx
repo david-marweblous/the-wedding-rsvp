@@ -11,9 +11,10 @@ interface HeroProps {
   img: IImage[];
   title: string;
   subTitle: string;
+  text: string;
 }
 
-export const Hero: React.FC<HeroProps> = ({ img, subTitle, title }) => {
+export const Hero: React.FC<HeroProps> = ({ img, subTitle, title, text }) => {
   const names = title.replace(' & ', '.').split('.');
 
   return (
@@ -32,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ img, subTitle, title }) => {
       <div className={styles.heroTitle}>{title}</div>
       <div className={styles.heroSubtitle}>{subTitle}</div>
       <div className={styles.musicPlayer}>
-        <p>Listen to the music</p>
+        <p>{text}</p>
         <MusicPlayer />
       </div>
     </div>

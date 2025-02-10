@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  //gap: 2rem;
+  padding: 1rem 2rem;
+  height: 900px;
+  width: 100dvw;
+  background-image: url('/media/background.jpg');
+  background-position: center top;
+  padding: 0;
+  .title {
+    text-align: center;
+  }
+}

@@ -11,12 +11,13 @@ interface ITimelineData {
 
 interface TimelineProps {
   timeline: ITimelineData[];
+  title: string;
 }
 
-export const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
+export const Timeline: React.FC<TimelineProps> = ({ timeline, title }) => {
   return (
     <div id="itinerary" className={styles.timelineStyled}>
-      <h2>Itinerary</h2>
+      <h2>{title}</h2>
       {timeline.map((event, idx) => (
         <div className={styles.timelineWrapper} key={idx}>
           <div className={styles.timelineComponent}>

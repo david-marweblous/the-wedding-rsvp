@@ -37,7 +37,7 @@ const navLinks = [
   },
   {
     href: '#itinerary',
-    text: 'Itinerary'
+    text: 'Itinerario'
   }
 ];
 
@@ -53,8 +53,8 @@ const heroData = {
     }
   ],
   title: 'David & Rebeca',
-  subTitle: '31 May 2025',
-  text: 'Listen to the music'
+  subTitle: '31 Mayo 2025',
+  text: 'Escucha nuestra canción'
 };
 
 const detailsData = {
@@ -70,13 +70,13 @@ const detailsData = {
       alt: 'Foto of the veniew'
     }
   ],
-  title: 'Ceramony, Social hour, Dinner and Party',
+  title: 'Ceremonia, Cocktel, Cena y Fiesta',
   subtitle: 'Cortijo San Antonio',
   text: 'Ctra Málaga-Campillos,Km 32,5,29566 Casarabonela, Malaga, España',
   time: '18:30 pm',
   link: {
     url: 'https://www.google.com/maps/place/Cortijo+San+Antonio/@36.814201,-4.7913,17z/data=!3m1!4b1!4m9!3m8!1s0xd72c1207284ea3d:0x5ab8c1ab1bfdeb83!5m2!4m1!1i2!8m2!3d36.814201!4d-4.7913!16s%2Fg%2F1v8j1svx?entry=ttu&g_ep=EgoyMDI1MDEwNy4wIKXMDSoASAFQAw%3D%3D',
-    text: 'See directions'
+    text: 'Ver dirección'
   }
 };
 
@@ -85,37 +85,37 @@ const timelineData = [
     img: '/media/itinararyRings.png',
     alt: 'wedding rings',
     time: '19:00',
-    text: 'Ceremony'
+    text: 'Ceremonia'
   },
   {
     img: '/media/itinararyGlases.png',
     alt: 'martini glass',
     time: '20:00',
-    text: 'Cocktails'
+    text: 'Cocktel'
   },
   {
     img: '/media/itinararyPlater.png',
     alt: 'wedding plater',
     time: '21:00',
-    text: 'Dinner'
+    text: 'Cena'
   },
   {
     img: '/media/itinararyMusic.png',
     alt: 'wedding music',
     time: '23:00',
-    text: 'Party'
+    text: 'Fiesta'
   },
   {
     img: '/media/itinararyCar.png',
     alt: 'wedding car',
     time: '04:00',
-    text: 'Time to say goodbye'
+    text: 'Despedida'
   }
 ];
 
 const galleryData = {
-  title: 'Photo Gallery',
-  text: 'When you realize that you want to spend the rest of your life with one person, you want the rest of your life start as soon as possible'
+  title: 'Galleria de photos',
+  text: 'Cuando te das cuenta de que quieres pasar el resto de tu vida con una persona, quieres que el resto de tu vida comience lo antes posible.'
 };
 
 const transportData = {
@@ -130,34 +130,34 @@ const transportData = {
     }
   ],
   header: 'Transport service',
-  text: 'We want you to only worry about having a good time, so you have at your disposal a bus service that will take you to the venue.',
+  text: 'Queremos que sólo te preocupes de pasarlo bien, por eso tienes a tu disposición un servicio de autobús que te llevará hasta el recinto.',
   details: [
     {
-      text: 'Depart',
+      text: 'Ida',
       time: '18:00 pm'
     },
     {
-      text: 'First return',
+      text: 'Primera vuelta',
       time: '01:00 am'
     },
     {
-      text: 'Second return',
+      text: 'Segunda vuelta',
       time: '04:00 am'
     }
   ],
-  pickup: 'Pick up point is:',
+  pickup: 'El punto de recogida es:',
   url: {
     href: 'https://maps.app.goo.gl/sLAne7uKQcxhz9N89',
-    text: 'Tivoli world entrance Benalmádena'
+    text: 'Entrada Tívoli Benalmádena'
   }
 };
 
 const hotelData = {
-  title: 'Hotels',
-  text: 'We know that many of you come from different places and countries so here we leave you a list of hotels to help you with your search.',
+  title: 'Hoteles',
+  text: 'Sabemos que muchos de vosotros venís de diferentes lugares y países por eso aquí os darnos un listado de hoteles para ayudaros en vuestra búsqueda.',
   details: [
     {
-      title: 'Hotels Benalmádena',
+      title: 'Hoteles Benalmádena',
       hotel: [
         {
           text: 'Hotel Benalma',
@@ -174,7 +174,7 @@ const hotelData = {
       ]
     },
     {
-      title: 'Hotels Torremolinos',
+      title: 'Hoteles Torremolinos',
       hotel: [
         {
           text: 'Sol Principe',
@@ -191,17 +191,17 @@ const hotelData = {
     {
       src: '/media/hotelImage.png',
       alt: 'Yellow flower'
+    },
+    {
+      src: '/media/hotelImage2.png',
+      alt: 'Drawing of a sunflower'
     }
   ]
 };
 
 const dresscodeData = {
-  title: 'Dresscode',
+  title: 'Código de vestimenta',
   img: [
-    {
-      src: '/media/dresscodeImage1.png',
-      alt: 'Green plant'
-    },
     {
       src: 'https://davidandrebeca.my.canva.site/media/729b1d11e2346feeacdd715a72c3d958.svg',
       alt: 'Drawing of suit and dress'
@@ -229,7 +229,7 @@ const dresscodeData = {
   ],
   link: {
     url: 'https://pin.it/2zfKv6wM1',
-    text: 'Here are some ideas'
+    text: 'Aquí hay algunas ideas'
   }
 };
 const giftData = {
@@ -247,9 +247,8 @@ const giftData = {
       alt: 'Revolut tag'
     }
   ],
-  title: 'Wedding gifts',
-  subtitle:
-    'Our best gift is having you with us, but if you would like to leave us a little something',
+  title: 'Regalo',
+  subtitle: 'Nuestro mejor regalo eres tú, pero si quieres tener un detalle',
   bank: 'ES26 15830001 1090 4336 6746',
   number: '656683979'
 };
@@ -260,14 +259,14 @@ const rsvpData = {
     src: '/media/rsvpImage1.png',
     alt: 'Yellow flower'
   },
-  title: 'Confirmation your assistance',
-  text: 'We hope to see you there!',
+  title: 'Confirmación de tu asistencia',
+  text: '¡Esperamos verte allí!',
   text2:
-    'Please, press the button below to proceed to the confirmation form and help us keep up to date with the numbers',
-  text3: 'Thank you!',
+    'Por favor, presiona el botón a continuación para pasar al formulario de confirmación y así ayudarnos a saber quienes van a asistír el día de la boda',
+  text3: '¡Gracias!',
   link: {
     url: 'https://forms.gle/XHmX83QXeTfyxNkTA',
-    text: 'Confirm your RSVP'
+    text: 'Confirma tu asistencia'
   }
 };
 
@@ -283,12 +282,13 @@ const sliderImages = [
 
 const photoData = {
   title: 'Photo album',
-  subtitle: 'You are invited to our wedding album.',
-  paragraph: 'Press the button below to upload the photos you take to our album.',
-  footer: 'Thank you for helping us create amazing memories.',
+  subtitle: 'Os invitamos a nuestro álbum de Boda.',
+  paragraph:
+    'Haz clic en el botón para acceder y poder añadir las fotos que hagas durante nuestra boda.',
+  footer: '¡Gracias por ayudarnos a construir nuestro tesoro de recuerdos!',
   url: {
     href: 'https://drive.google.com/drive/folders/1sUR8OoChkUl_nDklhxwNHcGsEJCxZoGR?usp=drive_link',
-    text: 'Go to photo album'
+    text: 'Ir al álbum de fotos'
   }
 };
 
@@ -323,13 +323,13 @@ export default function Home() {
       <main className={styles.mainView}>
         <Hero {...heroData} />
 
-        <Countdown text={'How long till the wedding'} time={1748714400000} />
+        <Countdown text={'¿Cuánto falta para la boda?'} time={1748714400000} />
 
         {/*<Calendar year={2025} month={4} />*/}
 
         <Details {...detailsData} />
 
-        <Timeline timeline={timelineData} title={'Itinerary'} />
+        <Timeline timeline={timelineData} title={'Itinerario'} />
 
         <Gallery {...galleryData} />
         <PhotoSlider images={sliderImages} />

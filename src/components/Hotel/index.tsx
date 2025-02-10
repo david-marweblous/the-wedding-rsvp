@@ -18,6 +18,7 @@ interface Ihotel {
 }
 
 interface HotelProps {
+  title: string;
   text: string;
   details: IDetails[];
   img: Iimages[];
@@ -28,7 +29,7 @@ export const Hotel: React.FC<HotelProps> = data => {
     <div className={styles.hotelStyled}>
       <img src={data.img[0].src} alt={data.img[0].alt} />
 
-      <p className={styles.title}>Hotels</p>
+      <p className={styles.title}>{data.title}</p>
       <p className={styles.subtitle}>{data.text}</p>
 
       {data.details.map((detail, idx) => {
@@ -49,9 +50,6 @@ export const Hotel: React.FC<HotelProps> = data => {
           </div>
         );
       })}
-      <div className={styles.imageContainer}>
-        <img src={data.img[1].src} alt={data.img[1].alt} />
-      </div>
     </div>
   );
 };

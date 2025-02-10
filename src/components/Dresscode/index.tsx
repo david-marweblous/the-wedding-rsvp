@@ -26,12 +26,14 @@ interface DresscodeProps {
 export const Dresscode: React.FC<DresscodeProps> = data => {
   return (
     <div className={styles.dresscodeStyled}>
-      <h2 className={styles.title}>{data.title}</h2>
       <img src={data.img[0].src} alt={data.img[0].alt} />
+
+      <h2 className={styles.title}>{data.title}</h2>
+      <img src={data.img[1].src} alt={data.img[1].alt} />
 
       <div className={styles.dividerContainer}>
         <div className={styles.divider}></div>
-        <img src={data.img[1].src} alt={data.img[1].alt} />
+        <img src={data.img[2].src} alt={data.img[2].alt} />
         <div className={styles.divider}></div>
       </div>
 
@@ -39,15 +41,9 @@ export const Dresscode: React.FC<DresscodeProps> = data => {
         return <p key={type.text}>{type.text}</p>;
       })}
       <p>
-        <img className={styles.pinter} src={data.img[2].src} alt={data.img[2].alt} />
+        <img className={styles.pinter} src={data.img[3].src} alt={data.img[3].alt} />
         <a href={data.link.url}>{data.link.text}</a>
       </p>
-
-      <div className={styles.dividerContainer}>
-        <div className={styles.divider}></div>
-        <img src={data.img[3].src} alt={data.img[3].alt} />
-        <div className={styles.divider}></div>
-      </div>
     </div>
   );
 };

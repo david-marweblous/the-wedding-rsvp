@@ -2,23 +2,16 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-interface IImageData {
-  src: string;
-  alt: string;
-}
-
 interface GalleryProps {
-  gallery: IImageData[];
+  title: string;
+  text: string;
 }
 
-export const Gallery: React.FC<GalleryProps> = ({}) => {
+export const Gallery: React.FC<GalleryProps> = ({ title, text }) => {
   return (
     <div className={styles.galleryStyled}>
-      <h2 className={styles.galleryTitle}>Photo gallery</h2>
-      <p className={styles.gallerySubTitle}>
-        When you realize that you want to spend the rest of your life with one person, you
-        want the rest of your life start as soon as possible
-      </p>
+      <h2 className={styles.galleryTitle}>{title}</h2>
+      <p className={styles.gallerySubTitle}>{text}</p>
     </div>
   );
 };

@@ -17,7 +17,6 @@
     width: 100%;
 
     font-size: 4rem;
-    @include parisienne-font;
 
     img {
       width: 100%;
@@ -36,26 +35,22 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: inline-block;
-      font-size: 55px;
+      font-size: 75px;
 
       span {
         display: inline-block;
         position: relative;
-        @include parisienne-font;
 
         &:nth-child(1) {
-          top: 0;
-          font-weight: bolder;
+          top: -10;
         }
 
         &:nth-child(2) {
           top: 30px;
-          font-weight: bolder;
         }
 
         &:nth-child(3) {
-          top: 50px;
-          font-weight: bolder;
+          top: 70px;
         }
       }
     }

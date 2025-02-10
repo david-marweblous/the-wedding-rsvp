@@ -6,6 +6,10 @@ interface Iimage {
   src: string;
   alt: string;
 }
+interface Iurl {
+  href: string;
+  text: string;
+}
 
 interface Idetails {
   text: string;
@@ -18,7 +22,7 @@ interface TransportProps {
   text: string;
   details: Idetails[];
   pickup: string;
-  pickupText: string;
+  url: Iurl;
 }
 
 export const Transport: React.FC<TransportProps> = data => {
@@ -38,7 +42,9 @@ export const Transport: React.FC<TransportProps> = data => {
       </div>
       <div className={styles.footer}>
         <p>{data.pickup}</p>
-        <p>{data.pickupText}</p>
+        <p>
+          <a href={data.url.href}>{data.url.text}</a>
+        </p>
       </div>
     </div>
   );

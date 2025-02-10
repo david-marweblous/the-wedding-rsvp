@@ -1,28 +1,19 @@
 @import '../../styles/mixins.scss';
-
-.rsvpStyled {
+.photosStyled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 2rem;
+  gap: 1rem;
 
+  text-align: center;
   margin-top: 100px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('/media/photos.png');
+  height: 550px;
 
   .title {
     font-size: 3rem;
     @include parisienne-font;
-  }
-  p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding: 0 20px;
-  }
-  button {
-    border-radius: 5%;
-    border: solid 2 purple;
-    padding: 15px;
-    font-size: 1.5rem;
   }
   a {
     color: #000;
@@ -30,8 +21,15 @@
     font-size: 1.2rem;
     font-weight: 400;
   }
-
-  img {
-    width: 35%;
+  button {
+    border-radius: 5%;
+    border: solid 2 purple;
+    padding: 15px;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0 20px;
   }
 }
